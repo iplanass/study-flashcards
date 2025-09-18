@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catalan-English Flashcards</title>
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --ink:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; }
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0b1220,#0f172a);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:var(--ink);display:flex;align-items:center;justify-content:center}
+    .wrap{width:min(900px,95vw);}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    header h1{font-size:1.1rem;font-weight:600;margin:0;color:var(--ink)}
+    header .sub{color:var(--muted);font-size:.9rem}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap}
+    button,.select{background:#0b1220;border:1px solid #1f2937;border-radius:12px;color:var(--ink);padding:10px 14px;font-weight:600;cursor:pointer;transition:transform .05s ease,background .2s ease}
+    button:active{transform:scale(.98)}
+    button[disabled]{opacity:.5;cursor:not-allowed}
+    .primary{background:var(--accent);border-color:transparent;color:#071d10}
+    .card{position:relative;background:radial-gradient(1200px 500px at 50% -30%,#1f2937,transparent 60%),var(--card);border:1px solid #1f2937;border-radius:20px;min-height:46vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;user-select:none;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .term{font-size:clamp(28px,5vw,54px);line-height:1.15;font-weight:800;letter-spacing:.2px}
+    .lang{position:absolute;top:12px;left:16px;color:var(--muted);font-weight:700;font-size:.85rem}
+    .status{position:absolute;top:12px;right:16px;color:var(--muted);font-size:.85rem}
+    .kbd{font:inherit;border:1px solid #374151;border-radius:8px;padding:2px 6px;color:var(--muted)}
+    .row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px}
+    .grow{flex:1}
+    .muted{color:var(--muted)}
+    .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:520px){.toolbar{gap:6px} button{padding:9px 12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Catalan-English Flashcards</h1>
+        <div class="sub">Click card to flip • <span class="kbd">Space</span> to flip • <span class="kbd">→</span>/<span class="kbd">←</span> next/prev</div>
+      </div>
+      <div class="toolbar">
+        <button id="swapBtn" title="Swap front/back">Swap A ⇄ B</button>
+        <button id="shuffleBtn" title="Shuffle the deck">Shuffle</button>
+        <button id="restartBtn" title="Restart deck">Restart</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="card" id="card" tabindex="0" role="button" aria-pressed="false" aria-label="Flashcard">
+        <div class="lang" id="langLabel">A → B</div>
+        <div class="status" id="status">1 / 1</div>
+        <div class="term" id="term">Loading…</div>
+      </div>
+      <div class="row">
+        <div class="grow">
+          <span class="muted">Deck:</span>
+          <span id="deckName" class="muted">Sample (EN ⇄ CA)</span>
+        </div>
+        <div class="row">
+          <button id="prevBtn" title="Previous (←)">← Prev</button>
+          <button id="flipBtn" class="primary" title="Flip (Space)">Flip</button>
+          <button id="nextBtn" title="Next (→)">Next →</button>
+        </div>
+      </div>
+    </main>
+
+    <p class="muted" style="margin-top:14px">Edit the <code>cards</code> array in the code to add your own words. Set <code>frontKey</code>/<code>backKey</code> for languages.</p>
+  </div>
+
+  <script>
+    // --- 1) YOUR DATA -------------------------------------------------------
+    // Replace this with your own list. Each card has keys for both languages.
+    const cards = [
+      { a: 'cat', b: 'gat' },
+      { a: 'dog', b: 'gos' },
+      { a: 'thank you', b: 'gràcies' },
+      { a: 'good morning', b: 'bon dia' },
+      { a: 'water', b: 'aigua' },
+      { a: 'train', b: 'tren' },
+      { a: 'book', b: 'llibre' }
+    ]
+
+    // Label your languages for display. Keys must match the object keys above.
+    let frontKey = 'a' // shown first
+    let backKey  = 'b' // shown after flip
+    const labels = { a: 'A', b: 'B' }
+
+    // --- 2) APP STATE -------------------------------------------------------
+    let order = [...cards.keys()]
+    let index = 0
+    let showingBack = false
+
+    // --- 3) DOM HOOKS -------------------------------------------------------
+    const termEl   = document.getElementById('term')
+    const statusEl = document.getElementById('status')
+    const cardEl   = document.getElementById('card')
+    const langEl   = document.getElementById('langLabel')
+    const deckName = document.getElementById('deckName')
+
+    const prevBtn    = document.getElementById('prevBtn')
+    const nextBtn    = document.getElementById('nextBtn')
+    const flipBtn    = document.getElementById('flipBtn')
+    const swapBtn    = document.getElementById('swapBtn')
+    const shuffleBtn = document.getElementById('shuffleBtn')
+    const restartBtn = document.getElementById('restartBtn')
+
+    // --- 4) HELPERS ---------------------------------------------------------
+    function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]] } return arr }
+    function clamp(n,min,max){ return Math.max(min,Math.min(max,n)) }
+
+    function updateCard(){
+      const i = order[index]
+      const data = cards[i]
+      termEl.textContent = showingBack ? (data[backKey] ?? '') : (data[frontKey] ?? '')
+      statusEl.textContent = (index+1) + ' / ' + order.length
+      langEl.textContent = (showingBack ? `${labels[backKey]}` : `${labels[frontKey]}`) + ' → ' + (showingBack ? `${labels[frontKey]}` : `${labels[backKey]}`)
+      cardEl.setAttribute('aria-pressed', showingBack ? 'true' : 'false')
+    }
+
+    function flip(){ showingBack = !showingBack; updateCard() }
+    function next(){ index = clamp(index+1, 0, order.length-1); showingBack=false; updateCard() }
+    function prev(){ index = clamp(index-1, 0, order.length-1); showingBack=false; updateCard() }
+
+    function swap(){ const t=frontKey; frontKey=backKey; backKey=t; showingBack=false; updateCard() }
+
+    function doShuffle(){ shuffle(order); index=0; showingBack=false; updateCard() }
+    function restart(){ order=[...cards.keys()]; index=0; showingBack=false; updateCard() }
+
+    // --- 5) EVENTS ----------------------------------------------------------
+    cardEl.addEventListener('click', flip)
+    flipBtn.addEventListener('click', flip)
+    nextBtn.addEventListener('click', next)
+    prevBtn.addEventListener('click', prev)
+    swapBtn.addEventListener('click', swap)
+    shuffleBtn.addEventListener('click', doShuffle)
+    restartBtn.addEventListener('click', restart)
+
+    window.addEventListener('keydown', (e)=>{
+      if(e.key===' '){ e.preventDefault(); flip() }
+      else if(e.key==='ArrowRight'){ next() }
+      else if(e.key==='ArrowLeft'){ prev() }
+    })
+
+    // --- 6) INIT ------------------------------------------------------------
+    deckName.textContent = 'Sample (EN ⇄ CA)'
+    updateCard()
+  </script>
+</body>
+</html>
