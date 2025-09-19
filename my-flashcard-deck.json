@@ -1,0 +1,26 @@
+{
+  "animals": [
+    { "EN": "Dog", "CA": "Gos", "desc": "El gos està al jardí.\n<i>The dog is in the garden.</i>" },
+    { "EN": "Cat", "CA": "Gat", "desc": "Aquells dos sempre estan com gat i gos.\n<i>Those two are always arguing.</i>" },
+    { "EN": "Bird", "CA": "Ocell", "desc": "Hi ha un ocell al niu.\n<i>There's a bird in the nest.</i>" },
+    { "EN": "Horse", "CA": "Cavall", "desc": "El cavall galopa al camp.\n<i>The horse is galloping in the field.</i>" },
+    { "EN": "Rabbit", "CA": "Conill", "desc": "El conill menja pastanagues.\n<i>The rabbit is eating carrots.</i>" },
+    { "EN": "Fish", "CA": "Peix", "desc": "El peix nada al riu.\n<i>The fish swims in the river.</i>" }
+  ],
+  "food": [
+    { "EN": "Bread", "CA": "Pa", "desc": "El pa amb tomàquet és el meu menjar preferit.\n<i>My favourite food is bread with tomato.</i>" },
+    { "EN": "Cheese", "CA": "Formatge", "desc": "Vols formatge?\n<i>Do you want cheese?</i>" },
+    { "EN": "Apple", "CA": "Poma", "desc": "Això és pastís de poma.\n<i>This is apple pie</i>" },
+    { "EN": "Milk", "CA": "Llet", "desc": "No m'agrada la llet.\n<i>I don't like milk.</i>" },
+    { "EN": "Egg", "CA": "Ou", "desc": "L'ou o la gallina.\n<i>The egg or the chicken.</i>" },
+    { "EN": "Tomato", "CA": "Tomàquet", "desc": "Posa tomàquet a l'amanida.\n<i>Add tomato to the salad.</i>" }
+  ],
+  "transport": [
+    { "EN": "Car", "CA": "Cotxe", "desc": "El cotxe és més lent que el tren.\n<i>The car is slower than the train.</i>" },
+    { "EN": "Train", "CA": "Tren", "desc": "El tren és més ràpid que el cotxe.\n<i>The train is faster than the car.</i>" },
+    { "EN": "Bicycle", "CA": "Bicicleta", "desc": "No sé anar en bicicleta.\n<i>I don't know how to ride a bicycle.</i>" },
+    { "EN": "Bus", "CA": "Autobús", "desc": "L'autobús arriba d'aquí 15 minuts.\n<i>The bus arrives in 15 minutes.</i>" },
+    { "EN": "Plane", "CA": "Avió", "desc": "Hora de pujar a l'avió.\n<i>Time to get on the plane.</i>" },
+    { "EN": "Boat", "CA": "Vaixell", "desc": "Quan vaig amb vaixell em marejo.\n<i>I get seasick on boats.</i>" }
+  ]
+}
