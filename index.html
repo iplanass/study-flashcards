@@ -127,66 +127,48 @@
   <script>
     // --- Default decks ---
     let decks = {
-      "animals": [
+      "Unit 1: greetings and basics": [
+        { "EN": "Hello", "CA": "Hola", "desc": "\n<i> </i>"},
+        { "EN": "Bye!", "CA": "Adéu!", "desc": "<i> We may often hear it as 'deu, \n or even 'Adéu siau' or 'Passi-ho bé' in some towns.</i>"},
+        { "EN": "Good morning", "CA": "Bon dia", "desc": "\n<i> </i>"},
+        { "EN": "Good night", "CA": "Bona nit", "desc": ""},
         { "EN": "Dog", "CA": "Gos", "desc": "El gos està al jardí.\n<i>The dog is in the garden.</i>" },
         { "EN": "Cat", "CA": "Gat", "desc": "Aquells dos sempre estan com gat i gos.\n<i>Those two are always arguing.</i>" },
-        { "EN": "Bird", "CA": "Ocell", "desc": "Hi ha un ocell al niu.\n<i>There's a bird in the nest.</i>" },
-        { "EN": "Horse", "CA": "Cavall", "desc": "El cavall galopa al camp.\n<i>The horse is galloping in the field.</i>" },
-        { "EN": "Rabbit", "CA": "Conill", "desc": "El conill menja pastanagues.\n<i>The rabbit is eating carrots.</i>" },
-        { "EN": "Fish", "CA": "Peix", "desc": "El peix nada al riu.\n<i>The fish swims in the river.</i>" }
-      ],
-      "Restaurant": [
         { "EN": "Bread", "CA": "Pa", "desc": "El pa amb tomàquet és el meu menjar preferit.\n<i>My favourite food is bread with tomato.</i>" },
         { "EN": "Cheese", "CA": "Formatge", "desc": "Vols formatge?\n<i>Do you want cheese?</i>" },
         { "EN": "Apple", "CA": "Poma", "desc": "Això és pastís de poma.\n<i>This is apple pie</i>" },
         { "EN": "Milk", "CA": "Llet", "desc": "No m'agrada la llet.\n<i>I don't like milk.</i>" },
-        { "EN": "Egg", "CA": "Ou", "desc": "L'ou o la gallina.\n<i>The egg or the chicken.</i>" },
-        { "EN": "Tomato", "CA": "Tomàquet", "desc": "Posa tomàquet a l'amanida.\n<i>Add tomato to the salad.</i>" },
         { "EN": "Water", "CA": "Aigua", "desc": "Necessito un got d’aigua.\n<i>I need a glass of water.</i>" },
         { "EN": "Coffee", "CA": "Cafè", "desc": "El cafè és molt fort.\n<i>The coffee is very strong.</i>" },
         { "EN": "Wine", "CA": "Vi", "desc": "Beuen vi negre per sopar.\n<i>They drink red wine for dinner.</i>" },
         { "EN": "Menu", "CA": "Carta", "desc": "Podria veure la carta?\n<i>Could I see the menu?</i>" },
-        { "EN": "The bill, please", "CA": "El compte, si us plau", "desc": "El compte, si us plau.\n<i>The bill, please.</i>" },
-        { "EN": "I have a reservation", "CA": "Tinc una reserva", "desc": "Tinc una reserva a nom de Joan.\n<i>I have a reservation under Joan.</i>" },
-        { "EN": "Table for two", "CA": "Taula per a dos", "desc": "Voldria una taula per a dos.\n<i>I’d like a table for two.</i>" }
-      ],
-      "transport": [
-        { "EN": "Car", "CA": "Cotxe", "desc": "El cotxe és més lent que el tren.\n<i>The car is slower than the train.</i>" },
         { "EN": "Train", "CA": "Tren", "desc": "El tren és més ràpid que el cotxe.\n<i>The train is faster than the car.</i>" },
-        { "EN": "Bicycle", "CA": "Bicicleta", "desc": "No sé anar en bicicleta.\n<i>I don't know how to ride a bicycle.</i>" },
         { "EN": "Bus", "CA": "Autobús", "desc": "L'autobús arriba d'aquí 15 minuts.\n<i>The bus arrives in 15 minutes.</i>" },
-        { "EN": "Plane", "CA": "Avió", "desc": "Hora de pujar a l'avió.\n<i>Time to get on the plane.</i>" },
-        { "EN": "Boat", "CA": "Vaixell", "desc": "Quan vaig amb vaixell em marejo.\n<i>I get seasick on boats.</i>" }
-      ],
-      "greetings": [
-        { "EN": "Hello", "CA": "Hola", "desc": "\n<i> </i>"},
-        { "EN": "Bye!", "CA": "Adéu!", "desc": "<i> We may often hear it as 'deu, \n or even 'Adéu siau' or 'Passi-ho bé' in some towns.</i>"},
-        { "EN": "Good morning", "CA": "Bon dia", "desc": "\n<i> </i>"},
-        { "EN": "Good afternoon", "CA": "Bona tarda / Bones tardes", "desc": "\n<i> You may here it sometimes as 'Bones' </i>"},
-        { "EN": "See you later", "CA": "Fins després", "desc": "<i> Although if you'll meet again very soon, you may hear: 'Fins ara' \n literally: Until now </i>"},
-        { "EN": "See you tomorrow", "CA": "Fins demà", "desc": "<i> Literally: Until tomorrow </i>"},
-        { "EN": "Good night", "CA": "Bona nit", "desc": ""},
-        { "EN": "Sleep tight", "CA": "Que dormis bé", "desc": ""}
-      ],
-      "useful expressions": [
         { "EN": "Thank you", "CA": "Gràcies", "desc": "Moltes gràcies per la teva ajuda.\n<i>Thank you very much for your help.</i>" },
         { "EN": "Excuse me", "CA": "Perdó", "desc": "Perdó, pots repetir-ho?\n<i>Excuse me, can you repeat that?</i>" },
-        { "EN": "Please", "CA": "Si us plau", "desc": "Una mica més, si us plau.\n<i>A little more, please.</i>" },
-        { "EN": "Where is the station?", "CA": "On és l’estació?", "desc": "On és l’estació de tren?\n<i>Where is the train station?</i>" },
+        { "EN": "Please", "CA": "Si us plau", "desc": "Una mica més, si us plau.\n<i>A little more, please.</i>" }
+      ],
+      "Unit 2: numbers and restaurant": [
         { "EN": "How much does it cost?", "CA": "Quant costa?", "desc": "Quant costa el bitllet?\n<i>How much is the ticket?</i>" },
         { "EN": "How much is this?", "CA": "Quant val això?", "desc": "" },
         { "EN": "Where are the toilets?", "CA": "On són els labavos?", "desc": "" },
         { "EN": "Card or cash", "CA": "Targeta o efectiu", "desc": "Es pot pagar amb targeta o en efectiu.\n<i>You can pay by card or in cash.</i>" },
-        { "EN": "Left", "CA": "Esquerra", "desc": "Gira a l’esquerra.\n<i>Turn left.</i>" },
-        { "EN": "Right", "CA": "Dreta", "desc": "El banc és a la dreta.\n<i>The bank is on the right.</i>" },
-        { "EN": "Near", "CA": "A prop", "desc": "El supermercat és a prop d’aquí.\n<i>The supermarket is near here.</i>" },
-        { "EN": "It’s raining", "CA": "Plou", "desc": "Plou molt avui.\n<i>It’s raining a lot today.</i>" },
-        { "EN": "It’s sunny", "CA": "Fa sol", "desc": "Avui fa molt sol.\n<i>It’s very sunny today.</i>" },
-        { "EN": "It’s cold", "CA": "Fa fred", "desc": "A l’hivern fa molt fred en el meu poble.\n<i>It’s very cold in winter in my town.</i>" },
+        { "EN": "Egg", "CA": "Ou", "desc": "L'ou o la gallina.\n<i>The egg or the chicken.</i>" },
+        { "EN": "Tomato", "CA": "Tomàquet", "desc": "Posa tomàquet a l'amanida.\n<i>Add tomato to the salad.</i>" },
+        { "EN": "The bill, please", "CA": "El compte, si us plau", "desc": "El compte, si us plau.\n<i>The bill, please.</i>" },
+        { "EN": "I have a reservation", "CA": "Tinc una reserva", "desc": "Tinc una reserva a nom de Joan.\n<i>I have a reservation under Joan.</i>" },
+        { "EN": "Table for two", "CA": "Taula per a dos", "desc": "Voldria una taula per a dos.\n<i>I’d like a table for two.</i>" },
         { "EN": "I'm vegeterian", "CA": "Sóc vegeterià", "desc": "No menjo carn, sóc vegeterià.\n<i>I don´t eat meat, I am vegetarian.</i>" },
-        { "EN": "Help!", "CA": "Ajuda!", "desc": "Ajuda! Hi ha un accident!\n<i>Help! There’s an accident!</i>" }
+        { "EN": "Allergy", "CA": "Al·lèrgia", "desc": "Tinc al·lèrgia a l'aspirina/Sóc al·lèrgic a l'aspirina.\n<i>I have an aspirin allergy. When we see this 'l·l', the L sound is slightly longer.</i>" },
+        { "EN": "One, Two", "CA": "U, Dos", "desc": "El número u ; un plàtan; una poma; dos ànecs; dues pastanagues. \n<i>Number one; one banana; one apple; two ducks; two carrots \n\n'U' often refers to number 1, while we use UN when counting things. UN and DOS become UNA or DUES when the object is femenin, as in the example. </i>" },
+        { "EN": "Three, Four, Five", "CA": "Tres, Quatre, Cinc", "desc": "" },
+        { "EN": "Six, Seven, Eight, Nine, Ten", "CA": "Sis, Set, Vuit, Nou, Deu", "desc": "" }
       ],
-      "Everyday life": [
+      "Unit 3: everyday life": [
+        { "EN": "Car", "CA": "Cotxe", "desc": "El cotxe és més lent que el tren.\n<i>The car is slower than the train.</i>" },
+        { "EN": "Bicycle", "CA": "Bicicleta", "desc": "No sé anar en bicicleta.\n<i>I don't know how to ride a bicycle.</i>" },
+        { "EN": "Plane", "CA": "Avió", "desc": "Hora de pujar a l'avió.\n<i>Time to get on the plane.</i>" },
+        { "EN": "Boat", "CA": "Vaixell", "desc": "Quan vaig amb vaixell em marejo.\n<i>I get seasick on boats.</i>" },
         { "EN": "Wake up", "CA": "Despertar-se", "desc": "Em desperto a les set.\n<i>I wake up at seven.</i>" },
         { "EN": "Go to work", "CA": "Anar a treballar", "desc": "Vaig a treballar en bicicleta.\n<i>I go to work by bicycle.</i>" },
         { "EN": "Cook dinner", "CA": "Cuinar el sopar", "desc": "Cuino el sopar per a la família.\n<i>I cook dinner for the family.</i>" },
@@ -196,14 +178,27 @@
         { "EN": "Teacher", "CA": "Mestre", "desc": "El mestre explica la lliçó.\n<i>The teacher explains the lesson.</i>" },
         { "EN": "Doctor", "CA": "Metge", "desc": "El metge em visita demà.\n<i>The doctor will see me tomorrow.</i>" },
         { "EN": "Medicine", "CA": "Medicina", "desc": "Pren la medicina cada matí.\n<i>Take the medicine every morning.</i>" },
-        { "EN": "Allergy", "CA": "Al·lèrgia", "desc": "Tinc al·lèrgia a l'aspirina/Sóc al·lèrgic a l'aspirina.\n<i>I have an aspirin allergy. When we see this 'l·l', the L sound is slightly longer.</i>" },
         { "EN": "Engineer", "CA": "Enginyer", "desc": "L’enginyer dissenya un pont nou.\n<i>The engineer designs a new bridge.</i>" },
         { "EN": "Tree", "CA": "Arbre", "desc": "Hi ha un arbre al jardí.\n<i>There is a tree in the garden.</i>" },
         { "EN": "Sea", "CA": "Mar", "desc": "El mar és blau.\n<i>The sea is blue.</i>" },
         { "EN": "Mountain", "CA": "Muntanya", "desc": "Pugem a la muntanya.\n<i>We climb the mountain.</i>" },
         { "EN": "Football", "CA": "Futbol", "desc": "Juguem a futbol cada diumenge.\n<i>We play football every Sunday.</i>" },
         { "EN": "Tennis", "CA": "Tenis", "desc": "El tenis és el meu esport preferit.\n<i>Tennis is my favourite sport.</i>" },
-        { "EN": "Swimming", "CA": "Natació", "desc": "Faig natació tres cops per setmana.\n<i>I swim three times a week.</i>" },
+        { "EN": "Swimming", "CA": "Natació", "desc": "Faig natació tres cops per setmana.\n<i>I swim three times a week.</i>" }
+      ],
+      "Unit 4: useful expressions": [
+        { "EN": "Where is the station?", "CA": "On és l’estació?", "desc": "On és l’estació de tren?\n<i>Where is the train station?</i>" },
+        { "EN": "Left", "CA": "Esquerra", "desc": "Gira a l’esquerra.\n<i>Turn left.</i>" },
+        { "EN": "Right", "CA": "Dreta", "desc": "El banc és a la dreta.\n<i>The bank is on the right.</i>" },
+        { "EN": "Near", "CA": "A prop", "desc": "El supermercat és a prop d’aquí.\n<i>The supermarket is near here.</i>" },
+        { "EN": "It’s raining", "CA": "Plou", "desc": "Plou molt avui.\n<i>It’s raining a lot today.</i>" },
+        { "EN": "It’s sunny", "CA": "Fa sol", "desc": "Avui fa molt sol.\n<i>It’s very sunny today.</i>" },
+        { "EN": "It’s cold", "CA": "Fa fred", "desc": "A l’hivern fa molt fred en el meu poble.\n<i>It’s very cold in winter in my town.</i>" },
+        { "EN": "Help!", "CA": "Ajuda!", "desc": "Ajuda! Hi ha un accident!\n<i>Help! There’s an accident!</i>" },
+        { "EN": "Good afternoon", "CA": "Bona tarda / Bones tardes", "desc": "\n<i> You may here it sometimes as 'Bones' </i>"},
+        { "EN": "See you later", "CA": "Fins després", "desc": "<i> Although if you'll meet again very soon, you may hear: 'Fins ara' \n literally: Until now </i>"},
+        { "EN": "See you tomorrow", "CA": "Fins demà", "desc": "<i> Literally: Until tomorrow </i>"},
+        { "EN": "Sleep tight", "CA": "Que dormis bé", "desc": ""},
         { "EN": "Christmas", "CA": "Nadal", "desc": "Celebrem el Nadal amb la família.\n<i>We celebrate Christmas with family.</i>" },
         { "EN": "Easter", "CA": "Pasqua", "desc": "A la Pasqua mengem mona.\n<i>We eat Easter cake at Easter.</i>" },
         { "EN": "Saint Jorge", "CA": "Sant Jordi", "desc": "Per Sant Jordi regalem llibres i roses.\n<i>On Saint George’s Day we give books and roses.</i>" },
@@ -211,7 +206,7 @@
         { "EN": "Sad", "CA": "Trist", "desc": "Ella està trista perquè plou.\n<i>She is sad because it’s raining.</i>" },
         { "EN": "Tired", "CA": "Cansat", "desc": "Després de treballar, estic cansat.\n<i>After work, I am tired.</i>" }
       ],
-      "Home & family": [
+      "Unit 5: home": [
         { "EN": "Chair", "CA": "Cadira", "desc": "Seu a la cadira.\n<i>Sit on the chair.</i>" },
         { "EN": "Table", "CA": "Taula", "desc": "La taula és de fusta.\n<i>The table is made of wood.</i>" },
         { "EN": "Door", "CA": "Porta", "desc": "Tanca la porta, si us plau.\n<i>Close the door, please.</i>" },
@@ -220,20 +215,13 @@
         { "EN": "Shoes", "CA": "Sabates", "desc": "Les sabates són noves.\n<i>The shoes are new.</i>" },
         { "EN": "Mother", "CA": "Mare", "desc": "La meva mare és metgessa.\n<i>My mother is a doctor.</i>" },
         { "EN": "Father", "CA": "Pare", "desc": "El meu pare cuina molt bé.\n<i>My father cooks very well.</i>" },
-        { "EN": "Brother", "CA": "Germà", "desc": "El meu germà estudia a Barcelona.\n<i>My brother studies in Barcelona.</i>" }
-      ],
-        "Numbers": [
-        { "EN": "One, Two", "CA": "U, Dos", "desc": "El número u ; un plàtan; una poma; dos ànecs; dues pastanagues. \n<i>Number one; one banana; one apple; two ducks; two carrots \n\n'U' often refers to number 1, while we use UN when counting things. UN and DOS become UNA or DUES when the object is femenin, as in the example. </i>" },
-        { "EN": "Three, Four, Five", "CA": "Tres, Quatre, Cinc", "desc": "" },
-        { "EN": "Six, Seven, Eight, Nine, Ten", "CA": "Sis, Set, Vuit, Nou, Deu", "desc": "" },
+        { "EN": "Brother", "CA": "Germà", "desc": "El meu germà estudia a Barcelona.\n<i>My brother studies in Barcelona.</i>" },
         { "EN": "Eleven, Twelve, Thirteen, Fourteen, Fifteen", "CA": "Onze, Dotze, Tretze, Catorze, Quinze", "desc": "" },
         { "EN": "Sixteen, Seventeen, Eighteen, Nineteen", "CA": "Setze, Disset, Divuit, Dinou", "desc": "" },
         { "EN": "Twenty", "CA": "Vint", "desc": "21 = Vint-i-u, 22 = Vint-i-dos, 23 = Vint-i-tres, 24= Vint-i-quatre, 25 = Vint-i-cinc... \n <i>We use Vint-i-[number] \n\n Note that we add a 'i' between numbers, but this is only done for twenties. As before, one and two will be masculin or femenin depending on the object we count.</i>" },
         { "EN": "Thirty", "CA": "Trenta", "desc": "31 = Trenta-u, 32 = Trenta-dos, 33 = Trenta-tres, ... \n <i>We use trenta-[number]. \n\nNote that we don't add 'i' anymore. As before, one and two will be masculin or femenin depending on the object we count.</i>" },
         { "EN": "Forty, Fifty, Sixty, Seventy, Eighty, Ninety", "CA": "Quaranta, Cinquanta, Seixanta, Setanta, Vuitanta, Noranta", "desc": "<i>Numbers in between work as in Thirty</i>" },
-        { "EN": "One hundred, two hundred, three hundred, ...", "CA": "Cent, Dos-cents, Tres-cents, ...", "desc": "[number]-cents" }
-      ],
-      "Colours": [
+        { "EN": "One hundred, two hundred, three hundred, ...", "CA": "Cent, Dos-cents, Tres-cents, ...", "desc": "[number]-cents" },
         { "EN": "Red", "CA": "Vermell", "desc": "La rosa és vermella.\n<i>The rose is red.</i>" },
         { "EN": "Blue", "CA": "Blau", "desc": "El cel és blau.\n<i>The sky is blue.</i>" },
         { "EN": "Green", "CA": "Verd", "desc": "L’herba és verda.\n<i>The grass is green.</i>" }
